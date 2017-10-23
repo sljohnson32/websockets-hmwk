@@ -23,6 +23,12 @@ form input {
   margin-right: .5%;
 }
 
+#user-name {
+  border: 2px solid #eee;
+  width: 30%;
+  background: rgb(130, 224, 255);
+}
+
 form button {
   width: 9%;
   background: rgb(130, 224, 255);
