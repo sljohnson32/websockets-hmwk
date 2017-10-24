@@ -1,17 +1,17 @@
 const socket = io();
-let name = '';
 
-$('#user-name').keyup((e) => {
-  $('button').attr('disabled', e.target.value == "" ? true : false);
+$('#m').keyup((e) => {
+  $('#send-message').attr('disabled', e.target.value == "" ? true : false);
 })
 
+$('.sign-in-out').on('click', toggleSignIn);
+
 $('form').submit(() => {
-  if (!name) {
-    name = $('#user-name').val();
-    $('#user-name').attr('value', name).attr('disabled', true);
-  }
+  let name = $('#account-info').attr('data-name');
+  console.log(name);
   socket.emit('chat message', { user: name, text: $('#m').val() });
   $('#m').val('');
+  $('#send-message').attr('disabled', true)
   return false;
 });
 
