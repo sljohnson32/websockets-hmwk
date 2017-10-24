@@ -1,5 +1,4 @@
 const socket = io();
-
 let name = '';
 
 $('#user-name').keyup((e) => {

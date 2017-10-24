@@ -8,16 +8,26 @@
   </head>
 
   <body>
+
+    <section id='sign-in-container'>
+      <button id='sign-in' class='sign-in-out'>Sign In</button>
+    </section>
+
     <ul id="messages"></ul>
 
-    <form action="">
-      <input id="user-name" placeholder="Enter your name to start chatting..." />
-      <input id="m" autocomplete="off" /><button disabled=true>Send</button>
-    </form>
+    <section id='chat-control-container'>
+      <article id="account-info-container"><p id="account-info">Sign in to chat!</p></article>
+      <button id='sign-out' class='sign-in-out hidden'>Sign Out</button>
+      <form action="">
+        <input id="m" autocomplete="off" /><button disabled=true>Send</button>
+      </form>
+    </section>
 
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/helpers/sign-in.js"></script>
     <script type="text/javascript" src="/scripts.js"></script>
-
   </body>
 </html>
