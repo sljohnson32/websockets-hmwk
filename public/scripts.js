@@ -52,8 +52,7 @@ socket.on('connected user', (message) => {
 })
 
 socket.on('typing', (message) => {
-  console.log(message.message)
-  $('#typing-notification').text(message.message)
+  $('#typing-notification').text(message)
 })
 
 socket.on('not typing', () => {
