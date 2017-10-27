@@ -23,7 +23,6 @@ const initApp = () => {
 
   firebase.initializeApp(config);
   firebase.auth().onAuthStateChanged(user => {
-    console.log(user)
     if (user) {
       $('#account-info').text(`${user.displayName} is logged in.`);
       $('#account-info').attr('data-name', user.displayName);
@@ -40,7 +39,5 @@ const initApp = () => {
     }
   });
 };
-
-
 
 $(document).ready(() => initApp())

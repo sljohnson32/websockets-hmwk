@@ -11,16 +11,22 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
   socket.broadcast.emit('connected user', {text: 'Someone has connected'});
   socket.on('disconnect', () => {
     socket.broadcast.emit('disconnected user', {text: 'Someone was disconnected'});
-    console.log('user disconnected');
   });
 
   socket.on('chat message', (message) => {
     io.emit('chat message', message);
   });
+
+  socket.on('typing', (message) => {
+    socket.broadcast.emit('typing', message);
+  })
+
+  socket.on('not typing', (message) => {
+    socket.broadcast.emit('notTyping', message);
+  })
 
 });
 

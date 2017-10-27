@@ -33,6 +33,10 @@ form {
   display: none;
 }
 
+#typing-notification {
+  color: white;
+}
+
 form input {
   border: 0;
   padding: 10px;
